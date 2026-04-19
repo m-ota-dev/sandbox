@@ -35,4 +35,6 @@ header li {
 }
 .content {
     padding: 20px 5%;
+    max-width: 800px;
+    margin: 0 auto;
 }
