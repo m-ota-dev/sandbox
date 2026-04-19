@@ -38,3 +38,10 @@ header li {
     max-width: 800px;
     margin: 0 auto;
 }
+header nav ul li a {
+    color: inherit;
+    text-decoration: underline;
+}
+header nav ul li a:hover {
+    color: rgb(85, 85, 85)
+}
