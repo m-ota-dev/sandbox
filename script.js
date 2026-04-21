@@ -107,24 +107,7 @@ document.getElementById("start").addEventListener("click", () => {
 });
 
 document.getElementById("finish").addEventListener("click", () => {
-  const testEnd = Date.now();
-  const totalTimeSec = (testEnd - testStart) / 1000;
-
-  const totalCorrect = results.filter(r => r.correct).length;
-
-  const payload = {
-    participantId: "A001",
-    condition: "digital_learn_digital_answer",
-    totalTimeSec,
-    totalCorrect,
-    questions: results,
-    timestamp: new Date().toISOString()
-  };
-
-  console.log(payload); // まずは確認
-});
-
-document.getElementById("finish").addEventListener("click", () => {
+    console.log("results:", results);
   const testEnd = Date.now();
   const totalTimeSec = (testEnd - testStart) / 1000;
 
