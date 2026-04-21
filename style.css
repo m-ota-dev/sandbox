@@ -45,3 +45,18 @@ header nav ul li a {
 header nav ul li a:hover {
     color: rgb(85, 85, 85)
 }
+
+.big-button {
+  font-size: 24px;      /* 文字を大きく */
+  padding: 20px 40px;   /* ボタン自体を大きく */
+  border-radius: 10px;  /* 角を丸く */
+  background-color: #4CAF50; /* 緑色（自由に変えてOK） */
+  color: white;         /* 文字色 */
+  border: none;         /* 枠線なし */
+  cursor: pointer;      /* マウスカーソルを「押せる」形に */
+  margin: 20px;         /* ボタンの周りに余白 */
+}
+
+.big-button:hover {
+  background-color: #45a049; /* ホバー時の色 */
+}
