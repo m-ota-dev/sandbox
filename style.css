@@ -60,3 +60,21 @@ header nav ul li a:hover {
 .big-button:hover {
   background-color: #45a049; /* ホバー時の色 */
 }
+
+.choice {
+  font-size: 24px;          /* 文字を大きく */
+  padding: 20px 40px;       /* ボタン自体を大きく */
+  margin: 10px;             /* ボタン同士の間隔 */
+  border-radius: 10px;      /* 角を丸く */
+  background-color: #2196F3; /* 青色（自由に変えてOK） */
+  color: white;             /* 文字色 */
+  border: none;             /* 枠線なし */
+  cursor: pointer;          /* マウスカーソルを「押せる」形に */
+  display: inline-block;    /* 横並びにする */
+  min-width: 120px;         /* 最低幅（スマホでも押しやすい） */
+  min-height: 60px;         /* 最低高さ（タップしやすい） */
+}
+
+.choice:hover {
+  background-color: #1976D2; /* ホバー時の色 */
+}
