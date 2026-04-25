@@ -107,7 +107,7 @@ document.getElementById("start").addEventListener("click", () => {
 });
 
 document.getElementById("finish").addEventListener("click", () => {
-    console.log("results:", results);
+    alert("finish button pushed")
   const testEnd = Date.now();
   const totalTimeSec = (testEnd - testStart) / 1000;
 
