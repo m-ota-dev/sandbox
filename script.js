@@ -122,7 +122,7 @@ document.getElementById("finish").addEventListener("click", () => {
     timestamp: new Date().toISOString()
   };
 
-fetch("https://sandbox-production-84bc.up.railway.app/submit", {
+fetch("https://sandbox-production-0a80.up.railway.app/submit", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
