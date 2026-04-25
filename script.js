@@ -122,15 +122,16 @@ document.getElementById("finish").addEventListener("click", () => {
     timestamp: new Date().toISOString()
   };
 
-  // ★ ここでGASに送信
-  fetch("https://script.google.com/macros/s/AKfycbz1wAaSnJzTzu5Najj_bQjB2YCdVu688hh1dnfb_HDs23HR09bst5564Do-3WcKZZG7Jg/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  alert("送信しました！");
-});
+fetch("https://sandbox-production-84bc.up.railway.app/submit", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    message: "Codespaces から送ったよ！",
+    time: Date.now()
+  })
+})
+.then(res => res.json())
+.then(data => console.log("サーバーからの返事:", data))
+.catch(err => console.error("エラー:", err))})
