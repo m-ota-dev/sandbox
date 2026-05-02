@@ -1,3 +1,4 @@
+alert("JavaScriptが読み込まれました。")
 fetch('header.html')
     .then(response => response.text())
     .then(data => {
