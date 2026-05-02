@@ -62,7 +62,42 @@ function showQuestions() {
 
     quizDiv.appendChild(div);
   });
+quizDiv.insertAdjacentHTML(
+    "beforeend",
+    `<button id="finish" class="big-button">回答終了</button>`
+  );
 
+
+document.getElementById("finish").addEventListener("click", () => {
+    alert;("送信されました！")
+  const testEnd = Date.now();
+  const totalTimeSec = (testEnd - testStart) / 1000;
+
+  const totalCorrect = results.filter(r => r.correct).length;
+
+  const payload = {
+    participantId: "A001",
+    condition: "digital_learn_digital_answer",
+    totalTimeSec,
+    totalCorrect,
+    questions: results,
+    timestamp: new Date().toISOString()
+  };
+
+fetch("https://sandbox-production-0a80.up.railway.app/submit", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    message: "Codespaces から送ったよ！",
+    time: Date.now()
+  })
+})
+
+.then(res => res.json())
+.then(data => console.log("サーバーからの返事:", data))
+.catch(err => console.error("エラー:", err))})
   setupChoiceHandlers();
 }
 
@@ -105,33 +140,3 @@ document.getElementById("start").addEventListener("click", () => {
   testStart = Date.now();
   showQuestions();
 });
-
-document.getElementById("finish").addEventListener("click", () => {
-    alert;("送信されました！")
-  const testEnd = Date.now();
-  const totalTimeSec = (testEnd - testStart) / 1000;
-
-  const totalCorrect = results.filter(r => r.correct).length;
-
-  const payload = {
-    participantId: "A001",
-    condition: "digital_learn_digital_answer",
-    totalTimeSec,
-    totalCorrect,
-    questions: results,
-    timestamp: new Date().toISOString()
-  };
-
-fetch("https://sandbox-production-0a80.up.railway.app/submit", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    message: "Codespaces から送ったよ！",
-    time: Date.now()
-  })
-})
-.then(res => res.json())
-.then(data => console.log("サーバーからの返事:", data))
-.catch(err => console.error("エラー:", err))})
